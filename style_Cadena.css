@@ -1,0 +1,333 @@
+/* style.css */
+
+/* --- Reseteo Básico y Box-Sizing --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #0d1a26; /* Fondo oscuro espacial */
+    color: #e0e7ef; /* Texto claro */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Fondo con degradado sutil para el efecto espacial */
+    background-image: linear-gradient(to bottom, #0d1a26, #1a2a3a);
+}
+
+/* --- Header del Sitio --- */
+.site-header {
+    background-color: rgba(18, 30, 42, 0.85); /* Un poco de transparencia */
+    padding: 1.2rem 2.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    position: sticky; /* Sticky header */
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00bcd4; /* Azul cian brillante */
+    text-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4; /* Efecto de brillo */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav a {
+    color: #a4b3be;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+    color: #00bcd4;
+    text-shadow: 0 0 5px #00bcd4;
+}
+
+.cta-button {
+    background-color: #e91e63; /* Rosa vibrante */
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+}
+
+.cta-button:hover {
+    background-color: #d81b60;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(233, 30, 99, 0.6);
+}
+
+/* --- Layout Principal de Contenido --- */
+.main-layout {
+    flex-grow: 1;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* --- Sección Hero/Banner --- */
+.hero-banner {
+    text-align: center;
+    padding: 5rem 2rem;
+    margin-bottom: 3rem;
+    background-image: url('https://via.placeholder.com/1200x400/1e3a51/FFFFFF?text=Espacio+Profundo'); /* Imagen de fondo espacial */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    position: relative; /* Para el overlay */
+}
+
+/* Overlay para la imagen de fondo */
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Oscurece la imagen */
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.hero-title, .hero-subtitle {
+    color: white;
+    text-shadow: 0 0 15px rgba(0, 188, 212, 0.7); /* Brillo azul */
+    z-index: 2; /* Asegura que el texto esté sobre el overlay */
+}
+
+.hero-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    max-width: 700px;
+    opacity: 0.9;
+}
+
+/* --- Sección de Tarjetas de Contenido --- */
+.content-cards-section {
+    margin-bottom: 3rem;
+}
+
+.section-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #00bcd4;
+    margin-bottom: 2.5rem;
+    text-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
+    gap: 2rem;
+}
+
+.info-card {
+    background-color: rgba(26, 42, 58, 0.9); /* Fondo ligeramente transparente */
+    border: 1px solid #34495e;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Para organizar el contenido interno */
+    flex-direction: column;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-color: #00bcd4; /* Borde al pasar el ratón */
+}
+
+.card-title {
+    font-size: 1.8rem;
+    color: #00bcd4;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 5px rgba(0, 188, 212, 0.3);
+}
+
+.card-text {
+    font-size: 1.05rem;
+    color: #c0d1e1;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Permite que el texto ocupe el espacio */
+}
+
+.card-link {
+    display: inline-block;
+    background-color: #e91e63;
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    align-self: flex-start; /* Alinea el botón al inicio de la tarjeta */
+    transition: background-color 0.3s ease;
+}
+
+.card-link:hover {
+    background-color: #d81b60;
+}
+
+/* --- Sección de Cita --- */
+.quote-section {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    margin-bottom: 3rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    border: 1px solid #34495e;
+}
+
+.quote-text {
+    font-size: 2.2rem;
+    font-style: italic;
+    color: #e0e7ef;
+    margin-bottom: 1rem;
+    position: relative;
+    padding: 0 20px; /* Espacio para las comillas */
+}
+
+.quote-text::before, .quote-text::after {
+    content: '"';
+    font-size: 4rem;
+    color: #556c80;
+    position: absolute;
+    opacity: 0.6;
+    line-height: 1;
+}
+
+.quote-text::before {
+    left: 0;
+    top: -20px;
+}
+
+.quote-text::after {
+    right: 0;
+    bottom: -20px;
+}
+
+
+.quote-author {
+    font-size: 1.3rem;
+    color: #00bcd4;
+    font-weight: bold;
+    display: block; /* Para que esté en su propia línea */
+    margin-top: 20px;
+}
+
+/* --- Footer del Sitio --- */
+.site-footer {
+    background-color: #121e2a;
+    color: #a4b3be;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto; /* Empuja el footer hacia abajo */
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+}
+
+/* --- Responsividad --- */
+@media (max-width: 768px) {
+    .site-header {
+        padding: 1rem 1.5rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap; /* Permitir que los elementos del menú salten de línea */
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr; /* Una sola columna en móviles */
+    }
+
+    .section-heading {
+        font-size: 2rem;
+    }
+
+    .quote-text {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-logo {
+        font-size: 1.6rem;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .info-card {
+        padding: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .quote-text {
+        font-size: 1.5rem;
+    }
+
+    .quote-text::before, .quote-text::after {
+        font-size: 3rem;
+    }
+}
