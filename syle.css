@@ -1,0 +1,149 @@
+/* CODIGOS CSS PARA LA PAGINA WEB*/
+.main-nav ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    background-color: #333; 
+    display: flex; 
+    justify-content: space-around; 
+}
+
+.main-nav ul li {
+    position: relative; 
+}
+
+.main-nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.main-nav ul li a:hover {
+    background-color: #555;
+}
+
+
+.submenu li {
+    width: 100%; 
+}
+
+.submenu li a {
+    padding: 12px 16px;
+    text-align: left; 
+}
+
+
+.main-nav ul li:hover > .submenu {
+    display: block;
+}
+
+body{
+    background-color: rgb(120 50 50);
+}
+
+.titulo{
+    background-image: linear-gradient(blue, red);
+    color: white;
+}
+
+.text{
+     color: white;
+  font-size: 2rem;
+  text-shadow:
+    -1px -1px 3px #999,
+    0 0 1px darkred,
+    1px 1px 1px red,
+    2px 2px 1px #555,
+    3px 3px 1px #222,
+    4px 4px 1px #000;
+}
+
+.info{
+    color: #000;
+}
+
+h4{
+    color: #000;
+}
+
+.element {
+  width: 600px;
+  height: 400px;
+  background-image: url("imagenes/nico_sf.png"), radial-gradient(transparent, #000), url("imagenes/camp_nou.jpg");
+  background-repeat: no-repeat;
+  background-size: contain, cover;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: flex-start; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+}
+
+.text-side {
+    flex: 1; 
+    padding-right: 20px; 
+    color: white; 
+}
+
+.contenido-principal {
+    display: flex;
+  justify-content: center; 
+  align-items: flex-start; 
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.seccion-noticia {
+  flex: 1;
+  margin-right: 20px; 
+}
+
+.contenedor-principal-arriba {
+  display: flex; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  width: 100%; 
+  padding: 20px; 
+  box-sizing: border-box; 
+}
+
+.seccion-texto-arsenal {
+  flex: 1; 
+  margin-right: 20px; 
+  max-width: 60%; 
+}
+
+.elemento {
+  --border-size: 42px;
+  width: 250px;
+  border: var(--border-size) solid black;
+  border-image-source: url("imagenes/logo.png");
+}
+
+.container_logo {
+  width: 180px;
+  height: 180px;
+  position: relative; 
+  animation: spin 2s linear infinite;
+  transform-style: preserve-3d;
+}
+
+.container img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
